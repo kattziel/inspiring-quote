@@ -6,32 +6,20 @@ import App from "./App";
 import {
   ApolloClient,
   InMemoryCache,
+  // used to store and manage data fetched from a GraphQL server in a client-side cache, enabling faster access to the data without the need for repeated requests to the server.
   HttpLink,
-  gql,
   ApolloProvider,
 } from "@apollo/client";
 
 const URL = "https://serene-everglades-86863-9deb6e9dd03e.herokuapp.com/";
 // const URL = "https://examples/devmastery.pl/random-stuff/graphql/";
+// defining URL where my server is available
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
     uri: URL,
   }),
 });
-
-const RANDOM_QUOTE_QUERY = gql`
-  query getRandomQuote {
-    randomQuote {
-      text
-      author
-    }
-  }
-`;
-
-client
-  .query({ query: RANDOM_QUOTE_QUERY })
-  .then((result) => console.log("query result is", result.data));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
