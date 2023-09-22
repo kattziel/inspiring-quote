@@ -6,6 +6,8 @@ export default function App() {
     <div className="App">
       <h1>Inspiring quote...</h1>
       <RandomQuote />
+      <RandomQuote />
+      <RandomQuote />
     </div>
   );
 }
@@ -26,6 +28,7 @@ function RandomQuote() {
       window.lastError = error;
     },
     errorPolicy: "all",
+    fetchPolicy: "no-cache"
     //all errors will be catched within this component
   });
   if (loading) {
