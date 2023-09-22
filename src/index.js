@@ -11,8 +11,8 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 
-const URL = "https://serene-everglades-86863-9deb6e9dd03e.herokuapp.com/";
-// const URL = "https://examples/devmastery.pl/random-stuff/graphql/";
+// const URL = "https://serene-everglades-86863-9deb6e9dd03e.herokuapp.com";
+const URL = "https://examples.devmastery.pl/random-stuff/graphql";
 // defining URL where my server is available
 const client = new ApolloClient({
   cache: new InMemoryCache(),
